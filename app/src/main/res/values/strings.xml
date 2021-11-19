@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Medicine Time</string>
+    <string name="app_name">CERDIKA</string>
     <string name="title_medicine_name">Medicine Name</string>
     <string name="hint_enter_med_name">Enter Medicine</string>
     <string name="medicine_days">Medicine Days</string>
@@ -24,4 +24,13 @@
     <string name="no_taken_med_history">You have not taken any medicine</string>
     <string name="no_ignored_history">Well Done</string>
     <string name="menu_stats">Monthly Report</string>
+    <string name="title_activity_login">CERDIKA</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

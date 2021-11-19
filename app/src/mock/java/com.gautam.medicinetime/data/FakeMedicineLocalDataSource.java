@@ -1,11 +1,11 @@
-package com.gautam.medicinetime.data;
+package com.ifirmawan.cerdika.data;
 
 import androidx.annotation.VisibleForTesting;
 
-import com.gautam.medicinetime.data.source.History;
-import com.gautam.medicinetime.data.source.MedicineAlarm;
-import com.gautam.medicinetime.data.source.MedicineDataSource;
-import com.gautam.medicinetime.data.source.Pills;
+import com.ifirmawan.cerdika.data.source.History;
+import com.ifirmawan.cerdika.data.source.MedicineAlarm;
+import com.ifirmawan.cerdika.data.source.MedicineDataSource;
+import com.ifirmawan.cerdika.data.source.Pills;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
