@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">Medicine Time</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">CERDIKA</string>
     <string name="title_medicine_name">Medicine Name</string>
     <string name="hint_enter_med_name">Enter Medicine</string>
     <string name="medicine_days">Medicine Days</string>
@@ -24,4 +24,12 @@
     <string name="no_taken_med_history">You have not taken any medicine</string>
     <string name="no_ignored_history">Well Done</string>
     <string name="menu_stats">Monthly Report</string>
+
+    <!-- Resources for Bank2LogInActivity -->
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account?</string>
+    <string name="welcome_sign_in">Welcome to CERDIKA \n Let\'s SIGN IN!</string>
+    <string name="register_new_account">Register New Account</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">SIGN IN</string>
+
 </resources>

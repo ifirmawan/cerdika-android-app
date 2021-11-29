@@ -1,10 +1,10 @@
-package com.gautam.medicinetime;
+package com.firmawan.cerdika;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
 
-import com.gautam.medicinetime.data.source.MedicineRepository;
-import com.gautam.medicinetime.data.source.local.MedicinesLocalDataSource;
+import com.firmawan.cerdika.data.source.MedicineRepository;
+import com.firmawan.cerdika.data.source.local.MedicinesLocalDataSource;
 
 /**
  * Created by gautam on 13/07/17.

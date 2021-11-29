@@ -1,18 +1,19 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     signingConfigs {
         config {
-            keyAlias 'medicine'
-            keyPassword 'test123'
-            storeFile file('/Users/gautam/Documents/Projects/MedicineTime/app/medicine')
-            storePassword 'test123'
+            keyAlias 'upload'
+            keyPassword 'Paman^123'
+            storeFile file('/Users/iwanfirmawan/upload-keystore.jks')
+            storePassword 'Open1234'
         }
     }
     compileSdkVersion 29
     buildToolsVersion '29.0.3'
     defaultConfig {
-        applicationId "com.gautam.medicinetime"
+        applicationId "com.firmawan.cerdika"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -31,7 +32,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
             pseudoLocalesEnabled true
-            proguardFile '/Users/gautam/Documents/Projects/MedicineTime/app/proguard-rules.pro'
+            proguardFile '/Users/iwanfirmawan/AndroidStudioProjects/cerdika-android-app/app/proguard-rules.pro'
         }
     }
     flavorDimensions "default"
@@ -57,6 +58,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

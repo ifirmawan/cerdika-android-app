@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="#ffffff"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="60dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_constraint_layout"
+            app:layout_constraintVertical_weight="0.79"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="170dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/btn_sign_in"
+                    android:layout_width="295dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:text="@string/sign_in"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inputs_constraint_layout"
+                    tools:layout_editor_absoluteX="40dp"
+                    tools:layout_editor_absoluteY="336dp" />
+
+                <Button
+                    android:id="@+id/dont_have_an_account_button"
+                    android:layout_width="193dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="58dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/don_t_have_an_account_sign_up"
+                    android:textColor="#454C66"
+                    android:textSize="13sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
+
+                <TextView
+                    android:id="@+id/welcom_back_log_in_text_view"
+                    android:layout_width="295dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-4dp"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/welcome_sign_in"
+                    android:textColor="#19224C"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="40dp"
+                    tools:layout_editor_absoluteY="-5dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/inputs_constraint_layout"
+                    android:layout_width="295dp"
+                    android:layout_height="173dp"
+                    android:layout_marginTop="68dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/welcom_back_log_in_text_view"
+                    tools:layout_editor_absoluteX="40dp"
+                    tools:layout_editor_absoluteY="123dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="77dp"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp">
+
+                        <TextView
+                            android:id="@+id/email_address_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-1dp"
+                            android:alpha="0.64"
+                            android:gravity="start"
+                            android:lineSpacingMultiplier="1.25"
+                            android:text="Email Address"
+                            android:textColor="#454C66"
+                            android:textSize="13sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="-2dp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="9dp"
+                            android:background="#F5F6F6"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/email_address_text_view"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="27dp" />
+
+                        <EditText
+                            android:layout_width="260dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="23dp"
+                            android:background="#00000000"
+                            android:gravity="start|center_vertical"
+                            android:hint="your@mail.com"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:textColor="#19224C"
+                            android:textColorHint="#D0D1D5"
+                            android:textSize="15sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/email_address_text_view"
+                            tools:layout_editor_absoluteX="20dp"
+                            tools:layout_editor_absoluteY="41dp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="77dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="96dp">
+
+                        <TextView
+                            android:id="@+id/password_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-1dp"
+                            android:alpha="0.64"
+                            android:gravity="start"
+                            android:lineSpacingMultiplier="1.25"
+                            android:text="Password"
+                            android:textColor="#454C66"
+                            android:textSize="13sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="-2dp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="9dp"
+                            android:background="#F5F6F6"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/password_text_view"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="27dp" />
+
+                        <EditText
+                            android:layout_width="246dp"
+                            android:layout_height="19dp"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_marginTop="23dp"
+                            android:background="#00000000"
+                            android:gravity="start|center_vertical"
+                            android:hint="******"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/password_text_view"
+                            tools:layout_editor_absoluteX="19dp"
+                            tools:layout_editor_absoluteY="48dp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_constraint_layout"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:background="#19224C"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/login_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="59dp"
+                android:gravity="start"
+                android:text="Login"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="59dp"
+                android:alpha="0.3"
+                android:gravity="start"
+                android:text="Sign Up"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@+id/login_text_view"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="131dp"
+                tools:layout_editor_absoluteY="59dp" />
+
+            <View
+                android:layout_width="55dp"
+                android:layout_height="3dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:background="#DFE4EA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="107dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="SIGN Up Here"
+        android:textColor="#454C66"
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="592dp"/>
+
+</RelativeLayout>
