@@ -71,5 +71,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "com.github.sundeepk:compact-calendar-view:$rootProject.compactCalendarViewVersion"
     implementation 'com.jakewharton:butterknife:10.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 }

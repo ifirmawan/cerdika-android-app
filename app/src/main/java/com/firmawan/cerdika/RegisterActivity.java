@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class RegisterActivity extends AppCompatActivity {
     private Button btnSignIn;
+    private Button btnSignUp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,5 +23,11 @@ public class RegisterActivity extends AppCompatActivity {
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(intent);
         });
+
+        btnSignUp = this.findViewById(R.id.btn_sign_up_submit);
+        btnSignUp.setOnClickListener((view -> {
+            Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
+            startActivity(intent);
+        }));
     }
 }
