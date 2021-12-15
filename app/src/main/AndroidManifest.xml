@@ -16,12 +16,12 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".medicine.MedicineActivity"
             android:exported="false" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

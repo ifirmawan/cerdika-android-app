@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/user"
                 android:layout_centerHorizontal="true"
-                android:text="Profile"/>
+                android:text="Cek Kesehatan"/>
         </RelativeLayout>
     </FrameLayout>
 
@@ -56,10 +56,12 @@
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"
                 android:textColor="#FFFFFF"
+                android:textAlignment="center"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/job"
                 android:layout_centerHorizontal="true"
-                android:text="Search Job"/>
+                android:text="Enyahkan\nAsap Rokok"
+                android:layout_gravity="center_horizontal" />
         </RelativeLayout>
     </FrameLayout>
 
@@ -83,10 +85,12 @@
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"
                 android:textColor="#FFFFFF"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/notif"
                 android:layout_centerHorizontal="true"
-                android:text="Notification"/>
+                android:text="Rajin Aktivitas\n Fisik"/>
         </RelativeLayout>
     </FrameLayout>
 
@@ -111,10 +115,12 @@
                 android:layout_marginTop="10dp"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/mail"
                 android:layout_centerHorizontal="true"
-                android:text="Messages"/>
+                android:text="Diet\nSeimbang"/>
         </RelativeLayout>
     </FrameLayout>
 
@@ -139,10 +145,11 @@
                 android:layout_marginTop="10dp"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
+                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rate"
                 android:layout_centerHorizontal="true"
-                android:text="Rate Card"/>
+                android:text="Istirahat\nYang Cukup"/>
         </RelativeLayout>
     </FrameLayout>
 
@@ -165,11 +172,43 @@
                 android:layout_width="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"
+                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rev"
                 android:layout_centerHorizontal="true"
                 android:textColor="#FFFFFF"
-                android:text="Review "/>
+                android:text="Kelola\nSetress"/>
         </RelativeLayout>
     </FrameLayout>
+    <FrameLayout
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        app:layout_columnSpan="2"
+        android:background="#01579b">
+
+        <RelativeLayout
+            android:id="@+id/rl_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/iv_alarm"
+                android:src="@drawable/like"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_alarm"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"
+                android:text="Alarm"/>
+        </RelativeLayout>
+    </FrameLayout>
+
+
 </androidx.gridlayout.widget.GridLayout>
