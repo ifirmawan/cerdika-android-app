@@ -4,19 +4,34 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_alarm.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_doing_diet.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_doing_exercise.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_health_check.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_no_smoking.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_stress_control.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_take_a_rest.xml" value="0.13645833333333332" />
         <entry key="app/src/main/res/drawable/background_day_view.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/drawable_underline.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/red.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/white.xml" value="0.25416666666666665" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.28742138364779873" />
+        <entry key="app/src/main/res/layout/activity_article.xml" value="0.23359192023879907" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_medicine.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_monthly_report.xml" value="0.1503623188405797" />
+        <entry key="app/src/main/res/layout/activity_notification.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_reminder_actvity.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/component_day_view.xml" value="0.1503623188405797" />
+        <entry key="app/src/main/res/layout/content_notification.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/fragment_add_medicine.xml" value="0.21240942028985507" />
         <entry key="app/src/main/res/layout/fragment_reminder.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/grid_item.xml" value="0.23143115942028986" />
+        <entry key="app/src/main/res/menu/cerdika_menu.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/menu/filter_history.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/menu/history_menu.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/menu/medicine_menu.xml" value="0.23802083333333332" />
       </map>
     </option>
   </component>

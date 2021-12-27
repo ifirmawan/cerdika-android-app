@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_hypertension"
+        android:title="@string/menu_hypertension" />
+    <item
+        android:id="@+id/menu_blood_eval"
+        android:title="@string/menu_blood_eval" />
+    <item
+        android:id="@+id/menu_medicine_eval"
+        android:title="@string/menu_medicine_eval" />
+</menu>

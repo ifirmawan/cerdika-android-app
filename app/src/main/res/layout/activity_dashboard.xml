@@ -1,214 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.gridlayout.widget.GridLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:columnCount="2"
-    app:rowCount="2"
-    app:orientation="horizontal"
-    tools:context=".DashboardActivity">
-    <FrameLayout
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        android:background="#5F9EA0"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    android:orientation="vertical"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/dashboard_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    <androidx.gridlayout.widget.GridLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:columnCount="2"
+        app:rowCount="2"
+        app:orientation="horizontal"
+        tools:context=".DashboardActivity">
+        <FrameLayout
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:background="#5F9EA0"
+            >
+            <RelativeLayout
+                android:id="@+id/rl_health_check"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/user"
-                android:src="@drawable/user"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/user"
-                android:layout_centerHorizontal="true"
-                android:text="Cek Kesehatan"/>
-        </RelativeLayout>
-    </FrameLayout>
+                <ImageView
+                    android:id="@+id/user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_health_check" />
 
-    <FrameLayout
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        android:background="#D2691E">
+                <TextView
+                    android:layout_below="@+id/user"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:text="Cek\nKesehatan" />
+            </RelativeLayout>
+        </FrameLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <FrameLayout
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:background="#D2691E">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/job"
-                android:src="@drawable/pin"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:textAlignment="center"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/job"
-                android:layout_centerHorizontal="true"
-                android:text="Enyahkan\nAsap Rokok"
-                android:layout_gravity="center_horizontal" />
-        </RelativeLayout>
-    </FrameLayout>
+            <RelativeLayout
+                android:id="@+id/rl_no_smoking"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <FrameLayout
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        android:background="#CD5C5C">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/job"
+                    app:srcCompat="@drawable/ic_no_smoking"/>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/job"
+                    android:layout_centerHorizontal="true"
+                    android:text="Enyahkan\nAsap Rokok"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <FrameLayout
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:background="#CD5C5C">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/notif"
-                android:src="@drawable/bell"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:textAlignment="center"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/notif"
-                android:layout_centerHorizontal="true"
-                android:text="Rajin Aktivitas\n Fisik"/>
-        </RelativeLayout>
-    </FrameLayout>
+            <RelativeLayout
+                android:id="@+id/rl_doing_exercise"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <FrameLayout
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        android:background="#B8860B"
-        >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/notif"
+                    app:srcCompat="@drawable/ic_doing_exercise"/>
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/notif"
+                    android:layout_centerHorizontal="true"
+                    android:text="Rajin\nAktivitas Fisik"/>
+            </RelativeLayout>
+        </FrameLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <FrameLayout
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:background="#B8860B"
+            >
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/mail"
-                android:src="@drawable/mail"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/mail"
-                android:layout_centerHorizontal="true"
-                android:text="Diet\nSeimbang"/>
-        </RelativeLayout>
-    </FrameLayout>
+            <RelativeLayout
+                android:id="@+id/rl_doing_diet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <FrameLayout
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        android:background="#2E8B57"
-        >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/mail"
+                    app:srcCompat="@drawable/ic_doing_diet"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/mail"
+                    android:layout_centerHorizontal="true"
+                    android:text="Diet\nSeimbang"/>
+            </RelativeLayout>
+        </FrameLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <FrameLayout
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:background="#2E8B57"
+            >
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/rate"
-                android:src="@drawable/star"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rate"
-                android:layout_centerHorizontal="true"
-                android:text="Istirahat\nYang Cukup"/>
-        </RelativeLayout>
-    </FrameLayout>
+            <RelativeLayout
+                android:id="@+id/rl_take_a_rest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <FrameLayout
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        android:background="#BC8F8F">
+                <ImageView
+                    android:id="@+id/rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_take_a_rest" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/rate"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center_horizontal"
+                    android:text="Istirahat\nYang Cukup"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+        </FrameLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/rev"
-                android:src="@drawable/like"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rev"
-                android:layout_centerHorizontal="true"
-                android:textColor="#FFFFFF"
-                android:text="Kelola\nSetress"/>
-        </RelativeLayout>
-    </FrameLayout>
-    <FrameLayout
-        app:layout_columnWeight="1"
-        app:layout_rowWeight="1"
-        app:layout_columnSpan="2"
-        android:background="#01579b">
+        <FrameLayout
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:background="#BC8F8F">
 
-        <RelativeLayout
-            android:id="@+id/rl_alarm"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/rl_stress_control"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:id="@+id/iv_alarm"
-                android:src="@drawable/like"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_alarm"
-                android:layout_centerHorizontal="true"
-                android:textColor="#FFFFFF"
-                android:text="Alarm"/>
-        </RelativeLayout>
-    </FrameLayout>
+                >
+
+                <ImageView
+                    android:id="@+id/rev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_stress_control" />
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/rev"
+                    android:layout_centerHorizontal="true"
+                    android:text="Kelola\nSetress"/>
+            </RelativeLayout>
+        </FrameLayout>
+        <FrameLayout
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:layout_columnSpan="2"
+            android:background="#01579b">
+
+            <RelativeLayout
+                android:id="@+id/rl_alarm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_alarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_alarm" />
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/iv_alarm"
+                    android:layout_centerHorizontal="true"
+                    android:text="Alarm"/>
+            </RelativeLayout>
+        </FrameLayout>
 
 
-</androidx.gridlayout.widget.GridLayout>
+    </androidx.gridlayout.widget.GridLayout>
+</LinearLayout>
+

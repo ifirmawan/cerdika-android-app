@@ -24,6 +24,9 @@
     <string name="no_taken_med_history">You have not taken any medicine</string>
     <string name="no_ignored_history">Well Done</string>
     <string name="menu_stats">Monthly Report</string>
+    <string name="menu_hypertension">Hipertensi</string>
+    <string name="menu_blood_eval">Evaluasi Tekanan Darah</string>
+    <string name="menu_medicine_eval">Kepatuhan Minum Obat</string>
 
     <!-- Resources for Bank2LogInActivity -->
     <string name="don_t_have_an_account_sign_up">Don\'t have an account?</string>
@@ -31,5 +34,6 @@
     <string name="register_new_account">Register New Account</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_in">SIGN IN</string>
+    <string name="hyperlink_freepik_1"><a href='https://www.freepik.com/vectors/medical'>Medical vector created by pikisuperstar - www.freepik.com</a></string>
 
 </resources>
