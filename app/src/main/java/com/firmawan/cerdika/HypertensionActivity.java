@@ -1,6 +1,7 @@
 package com.firmawan.cerdika;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -25,6 +26,17 @@ public class HypertensionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hypertension);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.hypertension_toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back_button);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HypertensionActivity.this, DashboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Pengertian
         rlHyDesc = (RelativeLayout) findViewById(R.id.rl_hypertension_desc);
         rlHyDesc.setOnClickListener(new View.OnClickListener() {

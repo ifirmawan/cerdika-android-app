@@ -136,7 +136,13 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.menu_blood_eval:
+                Bundle extras = new Bundle();
+                extras.putString("DATE_SISTOLIK",null);
+                extras.putString("SISTOLIK",null);
+                extras.putString("DATE_DIASTOLIK",null);
+                extras.putString("DIASTOLIK",null);
                 Intent intentBlood = new Intent(DashboardActivity.this, BloodEvaluationActivity.class);
+                intentBlood.putExtras(extras);
                 startActivity(intentBlood);
                 return true;
             case R.id.menu_logbook:

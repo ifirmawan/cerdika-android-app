@@ -1,24 +1,45 @@
 package com.firmawan.cerdika;
 
 public class BloodModel {
-    private String companyname;
-    private String  id;
+    private String bloodDateSistolik;
+    private String bloodDateDiastolik;
+    private String bloodSistolik;
+    private String bloodDiastolik;
 
-    public void setCompanyName(String companyname) {
-        this.companyname = companyname;
+    public void setBloodDateSistolik(String date) {
+        this.bloodDateSistolik = date;
     }
 
-    public void setName(String id)
-    {
-        this.id=id;
-    }
-    public String getCompanyname()
-    {
-        return companyname;
+    public void setBloodDateDiastolik(String date) {
+        this.bloodDateDiastolik = date;
     }
 
-    public String getid()
+    public void setBloodSistolik(String sistolik)
     {
-        return id;
+        this.bloodSistolik=sistolik;
+    }
+    public void setBloodDiastolik(String diastolik)
+    {
+        this.bloodDiastolik=diastolik;
+    }
+
+    public String getBloodDateSistolik()
+    {
+        return bloodDateSistolik;
+    }
+
+    public String getBloodDateDiastolik()
+    {
+        return bloodDateDiastolik;
+    }
+
+    public String getSistolik()
+    {
+        return bloodSistolik;
+    }
+
+    public String getDiastolik()
+    {
+        return bloodDiastolik;
     }
 }

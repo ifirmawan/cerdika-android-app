@@ -14,9 +14,21 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CERDIKA"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppinsbold"
+            android:autoSizePresetSizes="@array/autosize_title_sizes"
+            android:autoSizeTextType="uniform"
+            android:id="@+id/toolbar_title"
+            android:gravity="center_horizontal" />
+    </androidx.appcompat.widget.Toolbar>
 
     <GridLayout
         android:id="@+id/dashboard_grid"

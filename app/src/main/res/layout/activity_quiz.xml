@@ -14,7 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -62,5 +61,11 @@
                 android:layout_marginLeft="@dimen/text_large"
                 />
         </LinearLayout>
+        <Button
+            android:id="@+id/btn_quiz_submit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SUBMIT"
+            />
     </LinearLayout>
 </ScrollView>

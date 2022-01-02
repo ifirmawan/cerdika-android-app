@@ -26,6 +26,7 @@
         <entry key="app/src/main/res/drawable/red.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/white.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/activity_add_blood.xml" value="0.3765783545662473" />
+        <entry key="app/src/main/res/layout/activity_add_medicine.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/activity_article.xml" value="0.23359192023879907" />
         <entry key="app/src/main/res/layout/activity_blood_evaluation.xml" value="0.10029583878796737" />
         <entry key="app/src/main/res/layout/activity_blood_pressure_chart.xml" value="0.1" />

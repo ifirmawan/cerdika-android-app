@@ -1,11 +1,14 @@
 package com.firmawan.cerdika;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,10 +29,24 @@ public class QuizActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<QuizModel> arrayList = new ArrayList<QuizModel>();
     QuizAdapter adapter;
+
+    Button btnSubmit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.quiz_toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back_button);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(QuizActivity.this, DashboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
         /**
          * List Items
          */
@@ -46,7 +63,17 @@ public class QuizActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), list.getQuiz() + "\n" + list.getId(), Toast.LENGTH_SHORT).show();
             }
         });
-
+        /**
+         * Submit Data
+         */
+        btnSubmit = (Button) findViewById(R.id.btn_quiz_submit);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(QuizActivity.this, DashboardActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void setData() {
