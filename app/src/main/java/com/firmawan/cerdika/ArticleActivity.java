@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,5 +41,7 @@ public class ArticleActivity extends AppCompatActivity {
         mWebView = (WebView) findViewById(R.id.wv_content);
         mWebView.setWebViewClient(new LocalContentWebViewClient(assetLoader));
         mWebView.loadUrl("https://appassets.androidplatform.net/assets/html/" + page);
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
     }
 }

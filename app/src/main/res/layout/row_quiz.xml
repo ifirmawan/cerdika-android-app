@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/tv_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Apakah anda sudah menghindari rokok maupun asap rokok hari ini?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <RadioGroup
+        android:id="@+id/rg_old"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_quiz"
+        >
+        <RadioButton
+            android:id="@+id/rb_quiz_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ya"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            />
+        <RadioButton
+            android:id="@+id/rb_quiz_no"
+            android:layout_marginLeft="@dimen/eight_dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tidak"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

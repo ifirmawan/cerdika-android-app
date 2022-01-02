@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation ="vertical" >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/quiz_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="@string/menu_medicine_eval"
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppinsbold"
+                android:autoSizePresetSizes="@array/autosize_title_sizes"
+                android:autoSizeTextType="uniform"
+                android:id="@+id/toolbar_title"
+                android:gravity="center_horizontal" />
+        </androidx.appcompat.widget.Toolbar>
+        <ListView
+            android:id="@+id/quiz_medicine_list"
+            android:padding="@dimen/eight_dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quiz_toolbar"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/text_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quiz_medicine_list"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kepatuhan :"
+                />
+            <TextView
+                android:id="@+id/tv_quiz_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rendah / Sedang / Tinggi"
+                android:fontFamily="@font/poppinsbold"
+                android:layout_marginLeft="@dimen/text_large"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

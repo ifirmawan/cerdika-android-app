@@ -53,24 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         // Configure Button component
         btnSignIn = this.findViewById(R.id.btn_sign_in);
         btnSignIn.setOnClickListener((view) -> {
-            Intent intent = new Intent(LoginActivity.this, MedicineActivity.class);
+            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
             startActivity(intent);
         });
-
-        // Configure Don't have an accoun component
-        donThaveAnAccounButton = this.findViewById(R.id.dont_have_an_account_button);
-        donThaveAnAccounButton.setOnClickListener((view) -> {
-            this.onDonTHaveAnAccounPressed();
-        });
-
-        // Configure Welcom back. Log in component
-        welcomBackLogInTextView = this.findViewById(R.id.welcom_back_log_in_text_view);
-
-        // Configure Email Address component
-        emailAddressTextView = this.findViewById(R.id.email_address_text_view);
-
-        // Configure Password component
-        passwordTextView = this.findViewById(R.id.password_text_view);
     }
 
     public void onButtonTwoPressed() {

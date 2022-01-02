@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RegisterActivity extends AppCompatActivity {
     private Button btnSignIn;
     private Button btnSignUp;
-    private EditText emailEdit, passwordEdit;
+    private EditText emailEdit, passwordEdit, passwordConfirmEdit;
     private ProgressBar loadingPB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +32,13 @@ public class RegisterActivity extends AppCompatActivity {
     private void init(){
         emailEdit = this.findViewById(R.id.email_edit_text);
         passwordEdit = this.findViewById(R.id.password_edit_text);
+        passwordConfirmEdit = this.findViewById(R.id.password_confirm_edit_text);
         loadingPB = findViewById(R.id.idLoadingPB);
         btnSignIn = this.findViewById(R.id.btn_sign_in);
-        //btnSignIn.setOnClickListener((view) -> {
-          //  Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-            //startActivity(intent);
-        //});
+        btnSignIn.setOnClickListener((view) -> {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
 
         btnSignUp = this.findViewById(R.id.btn_sign_up_submit);
         btnSignUp.setOnClickListener((view -> {
@@ -46,11 +47,13 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
             // calling a method to post the data and passing our name and job.
-            postData(emailEdit.getText().toString(), passwordEdit.getText().toString());
+            // postData(emailEdit.getText().toString(), passwordEdit.getText().toString(), passwordConfirmEdit.getText().toString());
+            Intent intent = new Intent(RegisterActivity.this, PatientActivity.class);
+            startActivity(intent);
         }));
     }
 
-    private void postData(String email, String password) {
+    private void postData(String email, String password, String passwordConfirm) {
 
         // below line is for displaying our progress bar.
         loadingPB.setVisibility(View.VISIBLE);
@@ -68,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
         // passing data from our text fields to our modal class.
-        UserModel modal = new UserModel("android test",email, password, password);
+        UserModel modal = new UserModel("android test",email, password, passwordConfirm);
 
         // calling a method to create a post and passing our modal class.
         Call<UserModel> call = retrofitAPI.createPost(modal);

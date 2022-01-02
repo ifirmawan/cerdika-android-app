@@ -69,4 +69,11 @@
         <item>40sp</item>
         <item>100sp</item>
     </array>
+    <array name="autosize_title_sizes">
+        <item>20sp</item>
+        <item>24sp</item>
+        <item>40sp</item>
+        <item>80sp</item>
+        <item>200sp</item>
+    </array>
 </resources>

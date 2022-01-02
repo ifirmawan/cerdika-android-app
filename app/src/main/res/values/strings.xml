@@ -29,11 +29,12 @@
     <string name="menu_medicine_eval">Kepatuhan Minum Obat</string>
 
     <!-- Resources for Bank2LogInActivity -->
-    <string name="don_t_have_an_account_sign_up">Don\'t have an account?</string>
+    <string name="don_t_have_an_account_sign_up">Belum punya akun? silakan</string>
     <string name="welcome_sign_in">Welcome to CERDIKA \n Let\'s SIGN IN!</string>
     <string name="register_new_account">Register New Account</string>
-    <string name="already_have_an_account">Already have an account?</string>
-    <string name="sign_in">SIGN IN</string>
+    <string name="already_have_an_account">Sudah memiliki akun? silakan</string>
+    <string name="sign_in">Login</string>
     <string name="hyperlink_freepik_1"><a href='https://www.freepik.com/vectors/medical'>Medical vector created by pikisuperstar - www.freepik.com</a></string>
+    <string name="menu_logbook">Logbook Kegiatan</string>
 
 </resources>

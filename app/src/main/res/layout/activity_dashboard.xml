@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    tools:context=".DashboardActivity"
     >
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/dashboard_toolbar"
@@ -14,20 +15,21 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-    <androidx.gridlayout.widget.GridLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints" />
+
+    <GridLayout
+        android:id="@+id/dashboard_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:columnCount="2"
-        app:rowCount="2"
-        app:orientation="horizontal"
-        tools:context=".DashboardActivity">
+        android:layout_marginTop="?attr/actionBarSize"
+        android:rowCount="4"
+        android:columnCount="2"
+        >
         <FrameLayout
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:background="#5F9EA0"
             >
             <RelativeLayout
@@ -57,8 +59,9 @@
         </FrameLayout>
 
         <FrameLayout
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:background="#D2691E">
 
             <RelativeLayout
@@ -88,8 +91,9 @@
         </FrameLayout>
 
         <FrameLayout
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:background="#CD5C5C">
 
             <RelativeLayout
@@ -118,8 +122,9 @@
         </FrameLayout>
 
         <FrameLayout
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:background="#B8860B"
             >
 
@@ -149,8 +154,9 @@
         </FrameLayout>
 
         <FrameLayout
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:background="#2E8B57"
             >
 
@@ -181,8 +187,9 @@
         </FrameLayout>
 
         <FrameLayout
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:background="#BC8F8F">
 
             <RelativeLayout
@@ -211,10 +218,12 @@
                     android:text="Kelola\nSetress"/>
             </RelativeLayout>
         </FrameLayout>
+
         <FrameLayout
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
-            app:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
             android:background="#01579b">
 
             <RelativeLayout
@@ -241,8 +250,6 @@
                     android:text="Alarm"/>
             </RelativeLayout>
         </FrameLayout>
-
-
-    </androidx.gridlayout.widget.GridLayout>
-</LinearLayout>
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

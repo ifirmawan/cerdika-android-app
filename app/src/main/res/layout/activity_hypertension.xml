@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HypertensionActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/hypertension_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HIPERTENSI"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppinsbold"
+            android:autoSizePresetSizes="@array/autosize_title_sizes"
+            android:autoSizeTextType="uniform"
+            android:id="@+id/toolbar_title"
+            android:gravity="center_horizontal" />
+    </androidx.appcompat.widget.Toolbar>
+    <GridLayout
+        android:id="@+id/dashboard_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="4"
+        android:columnCount="2"
+        >
+
+        <FrameLayout
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#5F9EA0"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl_hypertension_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_info_hypertension" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/user"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center_horizontal"
+                    android:text="Pengertian"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#D2691E">
+
+            <RelativeLayout
+                android:id="@+id/rl_hypertension_caused"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/job"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_symptom_hypertension" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/job"
+                    android:layout_centerHorizontal="true"
+                    android:text="Penyebab"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#CD5C5C">
+
+            <RelativeLayout
+                android:id="@+id/rl_hypertension_symptom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/notif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_warning_hypertension" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/notif"
+                    android:layout_centerHorizontal="true"
+                    android:text="Tanda dan Gejala"/>
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#B8860B"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl_hypertension_clasify"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/mail"
+                    app:srcCompat="@drawable/ic_clasify_hypertension"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/mail"
+                    android:layout_centerHorizontal="true"
+                    android:text="Klasifikasi"/>
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#2E8B57"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl_hypertension_complication"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_complication_hypertension" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/rate"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center_horizontal"
+                    android:text="Komplikasi"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#BC8F8F">
+
+            <RelativeLayout
+                android:id="@+id/rl_hypertension_handler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+                <ImageView
+                    android:id="@+id/rev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_handler_hypertension" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:autoSizePresetSizes="@array/autosize_text_sizes"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/rev"
+                    android:layout_centerHorizontal="true"
+                    android:text="Penanganan"/>
+            </RelativeLayout>
+        </FrameLayout>
+
+
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

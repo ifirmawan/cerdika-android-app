@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
@@ -124,5 +125,30 @@ public class DashboardActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.cerdika_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.menu_hypertension:
+                Intent intent = new Intent(DashboardActivity.this, HypertensionActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.menu_blood_eval:
+                Intent intentBlood = new Intent(DashboardActivity.this, BloodEvaluationActivity.class);
+                startActivity(intentBlood);
+                return true;
+            case R.id.menu_logbook:
+                Intent intentLogbook = new Intent(DashboardActivity.this, LogBookActivity.class);
+                startActivity(intentLogbook);
+                return true;
+            case R.id.menu_medicine_eval:
+                Intent intentMedEval = new Intent(DashboardActivity.this, QuizActivity.class);
+                startActivity(intentMedEval);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
