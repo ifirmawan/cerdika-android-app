@@ -3,6 +3,7 @@ package com.firmawan.cerdika;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +26,6 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
         init();
     }
 
@@ -47,9 +47,9 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
             // calling a method to post the data and passing our name and job.
-            // postData(emailEdit.getText().toString(), passwordEdit.getText().toString(), passwordConfirmEdit.getText().toString());
-            Intent intent = new Intent(RegisterActivity.this, PatientActivity.class);
-            startActivity(intent);
+            postData(emailEdit.getText().toString(), passwordEdit.getText().toString(), passwordConfirmEdit.getText().toString());
+            // Intent intent = new Intent(RegisterActivity.this, PatientActivity.class);
+            // startActivity(intent);
         }));
     }
 
@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         // on below line we are creating a retrofit
         // builder and passing our base url
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://paman.app/")
+                .baseUrl("https://secure-brushlands-20308.herokuapp.com")
                 // as we are sending data in json format so
                 // we have to add Gson converter factory
                 .addConverterFactory(GsonConverterFactory.create())
@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
         // passing data from our text fields to our modal class.
-        UserModel modal = new UserModel("android test",email, password, passwordConfirm);
+        UserModel modal = new UserModel("cerdika user",email, password, passwordConfirm);
 
         // calling a method to create a post and passing our modal class.
         Call<UserModel> call = retrofitAPI.createPost(modal);
@@ -94,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                 UserModel responseFromAPI = response.body();
 
                 // on below line we are getting our data from modal class and adding it to our string.
-                String responseString = "Response Code : " + response.code() + "\nEmail : ";
+                String responseString = "Response Code : " + response.code();
                 Toast.makeText(RegisterActivity.this, responseString, Toast.LENGTH_SHORT).show();
 
                 if (response.code() == 201) {

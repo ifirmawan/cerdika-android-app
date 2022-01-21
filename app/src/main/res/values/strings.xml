@@ -27,6 +27,7 @@
     <string name="menu_hypertension">Hipertensi</string>
     <string name="menu_blood_eval">Evaluasi Tekanan Darah</string>
     <string name="menu_medicine_eval">Kepatuhan Minum Obat</string>
+    <string name="preference_file_key">MyAppPreferences</string>
 
     <!-- Resources for Bank2LogInActivity -->
     <string name="don_t_have_an_account_sign_up">Belum punya akun? silakan</string>
