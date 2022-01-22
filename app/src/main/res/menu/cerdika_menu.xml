@@ -12,4 +12,7 @@
     <item
         android:id="@+id/menu_logbook"
         android:title="@string/menu_logbook" />
+    <item
+        android:id="@+id/menu_patient"
+        android:title="Data Diri" />
 </menu>

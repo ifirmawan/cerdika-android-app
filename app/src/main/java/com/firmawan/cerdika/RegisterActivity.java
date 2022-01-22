@@ -3,13 +3,18 @@ package com.firmawan.cerdika;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.firmawan.cerdika.model.AccountModel;
+import com.firmawan.cerdika.model.NewAccountModel;
+import com.firmawan.cerdika.model.UserModel;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -54,57 +59,45 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void postData(String email, String password, String passwordConfirm) {
-
         // below line is for displaying our progress bar.
         loadingPB.setVisibility(View.VISIBLE);
-
-        // on below line we are creating a retrofit
-        // builder and passing our base url
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://secure-brushlands-20308.herokuapp.com")
-                // as we are sending data in json format so
-                // we have to add Gson converter factory
-                .addConverterFactory(GsonConverterFactory.create())
-                // at last we are building our retrofit builder.
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-        // below line is to create an instance for our retrofit api class.
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
-
         // passing data from our text fields to our modal class.
-        UserModel modal = new UserModel("cerdika user",email, password, passwordConfirm);
+        NewAccountModel newAccount = new NewAccountModel("cerdika user", email, password, passwordConfirm);
 
         // calling a method to create a post and passing our modal class.
-        Call<UserModel> call = retrofitAPI.createPost(modal);
+        Call<NewAccountModel> call = retrofitAPI.registerPost(newAccount);
 
         // on below line we are executing our method.
-        call.enqueue(new Callback<UserModel>() {
+        call.enqueue(new Callback<NewAccountModel>() {
             @Override
-            public void onResponse(Call<UserModel> call, Response<UserModel> response) {
-
+            public void onResponse(Call<NewAccountModel> call, Response<NewAccountModel> response) {
                 // below line is for hiding our progress bar.
                 loadingPB.setVisibility(View.GONE);
-
                 // on below line we are setting empty text
                 // to our both edit text.
                 emailEdit.setText("");
                 passwordEdit.setText("");
-
-                // we are getting response from our body
-                // and passing it to our modal class.
-                UserModel responseFromAPI = response.body();
-
                 // on below line we are getting our data from modal class and adding it to our string.
-                String responseString = "Response Code : " + response.code();
-                Toast.makeText(RegisterActivity.this, responseString, Toast.LENGTH_SHORT).show();
-
                 if (response.code() == 201) {
-                    Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, response.body().getData().getToken());
+                    Intent intent = new Intent(RegisterActivity.this, PatientActivity.class);
                     startActivity(intent);
+                }else{
+                    String responseString = "Response Code : " + response.code();
+                    Toast.makeText(RegisterActivity.this, responseString, Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<UserModel> call, Throwable t) {
+            public void onFailure(Call<NewAccountModel> call, Throwable t) {
                 // setting text to our text view when
                 // we get error response from API.
                 Toast.makeText(RegisterActivity.this, "Error found is : " + t.getMessage(), Toast.LENGTH_SHORT).show();

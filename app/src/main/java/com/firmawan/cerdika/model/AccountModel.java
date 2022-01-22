@@ -1,7 +1,9 @@
 
-package com.firmawan.cerdika;
+package com.firmawan.cerdika.model;
 
 import java.io.Serializable;
+
+import com.firmawan.cerdika.Data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

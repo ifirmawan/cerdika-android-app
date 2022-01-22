@@ -1,4 +1,4 @@
-package com.firmawan.cerdika;
+package com.firmawan.cerdika.model;
 
 public class UserModel {
     private String name;
