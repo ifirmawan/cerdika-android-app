@@ -1,5 +1,5 @@
 
-package com.firmawan.cerdika;
+package com.firmawan.cerdika.model;
 
 import java.io.Serializable;
 import com.google.gson.annotations.Expose;

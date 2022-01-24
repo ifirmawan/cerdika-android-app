@@ -12,15 +12,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.GridView;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.firmawan.cerdika.medicine.MedicineActivity;
-import com.firmawan.cerdika.model.AccountModel;
 import com.firmawan.cerdika.model.LogoutModel;
-import com.google.android.material.textfield.TextInputLayout;
+import com.firmawan.cerdika.utils.SaveSharedPreference;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -158,7 +155,7 @@ public class DashboardActivity extends AppCompatActivity {
                 extras.putString("SISTOLIK",null);
                 extras.putString("DATE_DIASTOLIK",null);
                 extras.putString("DIASTOLIK",null);
-                Intent intentBlood = new Intent(DashboardActivity.this, BloodEvaluationActivity.class);
+                Intent intentBlood = new Intent(DashboardActivity.this, BloodMeasureActivity.class);
                 intentBlood.putExtras(extras);
                 startActivity(intentBlood);
                 return true;

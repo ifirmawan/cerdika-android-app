@@ -1,4 +1,4 @@
-package com.firmawan.cerdika;
+package com.firmawan.cerdika.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

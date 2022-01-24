@@ -112,7 +112,6 @@
             android:text="Perempuan"
             android:layout_gravity="center_horizontal"
             android:checked="false"
-
             />
     </RadioGroup>
     <TextView

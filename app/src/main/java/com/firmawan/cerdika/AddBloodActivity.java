@@ -12,6 +12,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 
 import com.firmawan.cerdika.medicine.MedicineActivity;
+import com.firmawan.cerdika.utils.BloodSharedPreferences;
 
 import java.util.Calendar;
 
@@ -36,13 +37,14 @@ public class AddBloodActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle extras = new Bundle();
-                extras.putString("DATE_SISTOLIK",dateSistolik.getText().toString());
-                extras.putString("SISTOLIK",sistolik.getText().toString());
-                extras.putString("DATE_DIASTOLIK",dateDiastolik.getText().toString());
-                extras.putString("DIASTOLIK",diastolik.getText().toString());
-                Intent intent = new Intent(AddBloodActivity.this, BloodEvaluationActivity.class);
-                intent.putExtras(extras);
+                BloodSharedPreferences.setBloodMeasure(
+                        getApplicationContext(),
+                        Integer.valueOf(sistolik.getText().toString()),
+                        Integer.valueOf(diastolik.getText().toString()),
+                        dateSistolik.getText().toString(),
+                        dateDiastolik.getText().toString()
+                );
+                Intent intent = new Intent(AddBloodActivity.this, BloodMeasureActivity.class);
                 startActivity(intent);
             }
         });

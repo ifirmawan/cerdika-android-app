@@ -4,6 +4,7 @@ package com.firmawan.cerdika;
 import com.firmawan.cerdika.model.AccountModel;
 import com.firmawan.cerdika.model.LogoutModel;
 import com.firmawan.cerdika.model.NewAccountModel;
+import com.firmawan.cerdika.model.ProfileModel;
 import com.firmawan.cerdika.model.UserModel;
 
 import retrofit2.Call;
@@ -25,4 +26,7 @@ public interface RetrofitAPI {
 
     @GET("/api/membership/logout")
     Call<LogoutModel> logoutGet(@Header("Authorization") String authHeader);
+
+    @GET("/api/membership")
+    Call<ProfileModel> profileGet(@Header("Authorization") String authHeader);
 }

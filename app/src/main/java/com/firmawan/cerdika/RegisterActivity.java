@@ -10,9 +10,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.firmawan.cerdika.model.AccountModel;
 import com.firmawan.cerdika.model.NewAccountModel;
-import com.firmawan.cerdika.model.UserModel;
+import com.firmawan.cerdika.utils.SaveSharedPreference;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

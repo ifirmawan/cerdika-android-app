@@ -1,16 +1,18 @@
 
-package com.firmawan.cerdika;
+package com.firmawan.cerdika.model;
 
 import java.io.Serializable;
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User implements Serializable
+
+public class DataProfile implements Serializable
 {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private Long id;
     @SerializedName("name")
     @Expose
     private String name;
@@ -19,23 +21,32 @@ public class User implements Serializable
     private String email;
     @SerializedName("email_verified_at")
     @Expose
-    private Object emailVerifiedAt;
+    private String emailVerifiedAt;
     @SerializedName("created_at")
     @Expose
     private String createdAt;
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;
+    @SerializedName("avatar")
+    @Expose
+    private String avatar;
+    @SerializedName("role_id")
+    @Expose
+    private Object roleId;
+    @SerializedName("settings")
+    @Expose
+    private List<Object> settings = null;
     @SerializedName("membership")
     @Expose
     private Membership membership;
-    private final static long serialVersionUID = -8124178946803746895L;
+    private final static long serialVersionUID = 5480935160369403828L;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -55,11 +66,11 @@ public class User implements Serializable
         this.email = email;
     }
 
-    public Object getEmailVerifiedAt() {
+    public String getEmailVerifiedAt() {
         return emailVerifiedAt;
     }
 
-    public void setEmailVerifiedAt(Object emailVerifiedAt) {
+    public void setEmailVerifiedAt(String emailVerifiedAt) {
         this.emailVerifiedAt = emailVerifiedAt;
     }
 
@@ -77,6 +88,30 @@ public class User implements Serializable
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Object getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Object roleId) {
+        this.roleId = roleId;
+    }
+
+    public List<Object> getSettings() {
+        return settings;
+    }
+
+    public void setSettings(List<Object> settings) {
+        this.settings = settings;
     }
 
     public Membership getMembership() {

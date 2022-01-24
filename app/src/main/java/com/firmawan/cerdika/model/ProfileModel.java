@@ -3,32 +3,19 @@ package com.firmawan.cerdika.model;
 
 import java.io.Serializable;
 
+import com.firmawan.cerdika.model.DataProfile;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
-public class AccountModel implements Serializable
+public class ProfileModel implements Serializable
 {
-    @SerializedName("email")
-    String email;
-
-    @SerializedName("password")
-    String password;
-
     @SerializedName("status")
     @Expose
     private String status;
-
     @SerializedName("data")
     @Expose
-    private Data data;
-
-    public AccountModel(String email, String password){
-        this.email = email;
-        this.password = password;
-    }
-
-    private final static long serialVersionUID = 4792790218001841476L;
+    private DataProfile data;
+    private final static long serialVersionUID = -30749811612640460L;
 
     public String getStatus() {
         return status;
@@ -38,11 +25,11 @@ public class AccountModel implements Serializable
         this.status = status;
     }
 
-    public Data getData() {
+    public DataProfile getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(DataProfile data) {
         this.data = data;
     }
 

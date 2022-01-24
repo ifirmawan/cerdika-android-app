@@ -1,15 +1,20 @@
+
 package com.firmawan.cerdika.model;
+
+import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LogoutModel {
+
+public class QuestionModel {
+
     @SerializedName("status")
     @Expose
     private String status;
     @SerializedName("data")
     @Expose
-    private Data data;
+    private List<QuestionDatum> data = null;
 
     public String getStatus() {
         return status;
@@ -19,11 +24,12 @@ public class LogoutModel {
         this.status = status;
     }
 
-    public Data getData() {
+    public List<QuestionDatum> getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(List<QuestionDatum> data) {
         this.data = data;
     }
+
 }

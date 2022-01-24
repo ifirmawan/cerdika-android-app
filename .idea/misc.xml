@@ -29,6 +29,7 @@
         <entry key="app/src/main/res/layout/activity_add_medicine.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/activity_article.xml" value="0.23359192023879907" />
         <entry key="app/src/main/res/layout/activity_blood_evaluation.xml" value="0.10029583878796737" />
+        <entry key="app/src/main/res/layout/activity_blood_measure.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_blood_pressure_chart.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.24854930359894886" />
         <entry key="app/src/main/res/layout/activity_hypertension.xml" value="0.37777777777777777" />
@@ -37,7 +38,7 @@
         <entry key="app/src/main/res/layout/activity_medicine.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_monthly_report.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_notification.xml" value="0.22056159420289856" />
-        <entry key="app/src/main/res/layout/activity_patient.xml" value="0.321617837276011" />
+        <entry key="app/src/main/res/layout/activity_patient.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.47152317880794703" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.32876706024569907" />
         <entry key="app/src/main/res/layout/activity_reminder_actvity.xml" value="0.1503623188405797" />
