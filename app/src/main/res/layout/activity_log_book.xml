@@ -1,68 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LogBookActivity">
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/logbook_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="@string/menu_logbook"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppinsbold"
+            android:autoSizePresetSizes="@array/autosize_title_sizes"
+            android:autoSizeTextType="uniform"
+            android:id="@+id/toolbar_title"
+            android:gravity="center_horizontal" />
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logbook_toolbar"
         >
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/logbook_toolbar"
+        <WebView
+            android:id="@+id/wvLogbookForm"
+            android:layout_marginTop="?attr/actionBarSize"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:text="@string/menu_logbook"
-                android:textColor="#fff"
-                android:textAlignment="center"
-                android:fontFamily="@font/poppinsbold"
-                android:autoSizePresetSizes="@array/autosize_title_sizes"
-                android:autoSizeTextType="uniform"
-                android:id="@+id/toolbar_title"
-                android:gravity="center_horizontal" />
-        </androidx.appcompat.widget.Toolbar>
-        <ListView
-            android:id="@+id/quiz_list"
-            android:padding="@dimen/eight_dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logbook_toolbar"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
             />
-        <ImageView
-            android:id="@+id/iv_logbook_preview"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-        <Button
-            android:id="@+id/btn_logbook_upload"
+        <ProgressBar
+            android:id="@+id/pgLogbook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/text_large"
-            android:text="Upload Gambar kegiatan anda"
-            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
             />
-        <Button
-            android:id="@+id/btn_logbook_submit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SUBMIT"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quiz_list"
-            />
-    </LinearLayout>
-</ScrollView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

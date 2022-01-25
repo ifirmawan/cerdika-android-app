@@ -81,7 +81,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.code() == 200){
                     loading.setVisibility(View.GONE);
                     Log.d(TAG, "login success with email: "+response.body().getData().getUser().getEmail());
-                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, response.body().getData().getToken());
+                    String uuid = response.body().getData().getUser().getMembership().getUuid();
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, response.body().getData().getToken(), uuid);
                     Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                     startActivity(intent);
                 }else{

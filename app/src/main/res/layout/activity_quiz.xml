@@ -1,71 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuizActivity">
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/quiz_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="@string/menu_medicine_eval"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppinsbold"
+            android:autoSizePresetSizes="@array/autosize_title_sizes"
+            android:autoSizeTextType="uniform"
+            android:id="@+id/toolbar_title"
+            android:gravity="center_horizontal" />
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation ="vertical" >
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/quiz_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:text="@string/menu_medicine_eval"
-                android:textColor="#fff"
-                android:textAlignment="center"
-                android:fontFamily="@font/poppinsbold"
-                android:autoSizePresetSizes="@array/autosize_title_sizes"
-                android:autoSizeTextType="uniform"
-                android:id="@+id/toolbar_title"
-                android:gravity="center_horizontal" />
-        </androidx.appcompat.widget.Toolbar>
-        <ListView
-            android:id="@+id/quiz_medicine_list"
-            android:padding="@dimen/eight_dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quiz_toolbar"
-            />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/text_large"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quiz_medicine_list"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kepatuhan :"
-                />
-            <TextView
-                android:id="@+id/tv_quiz_result"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rendah / Sedang / Tinggi"
-                android:fontFamily="@font/poppinsbold"
-                android:layout_marginLeft="@dimen/text_large"
-                />
-        </LinearLayout>
-        <Button
-            android:id="@+id/btn_quiz_submit"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_toolbar"
+        >
+        <WebView
+            android:id="@+id/wvQuizForm"
+            android:layout_marginTop="?attr/actionBarSize"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="SUBMIT"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
             />
-    </LinearLayout>
-</ScrollView>
+        <ProgressBar
+            android:id="@+id/pgQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

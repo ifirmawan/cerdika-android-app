@@ -17,10 +17,11 @@ public class SaveSharedPreference {
      * @param context
      * @param loggedIn
      */
-    public static void setLoggedIn(Context context, boolean loggedIn, String token) {
+    public static void setLoggedIn(Context context, boolean loggedIn, String token, String uuid) {
         SharedPreferences.Editor editor = getPreferences(context).edit();
         editor.putBoolean(LOGGED_IN_PREF, loggedIn);
         editor.putString(LOGGED_HEADER_TOKEN, token);
+        editor.putString(LOGGED_UUID, uuid);
         editor.apply();
     }
 
@@ -40,5 +41,14 @@ public class SaveSharedPreference {
      */
     public static String getHeaderToken(Context context) {
         return getPreferences(context).getString(LOGGED_HEADER_TOKEN, "");
+    }
+
+    /**
+     * Get the Login Token
+     * @param context
+     * @return String: header Token
+     */
+    public static String getLoggedUuid(Context context) {
+        return getPreferences(context).getString(LOGGED_UUID, "");
     }
 }

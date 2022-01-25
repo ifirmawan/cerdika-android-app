@@ -185,7 +185,7 @@ public class DashboardActivity extends AppCompatActivity {
                 .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         // The user wants to leave - so dismiss the dialog and exit
-                        SaveSharedPreference.setLoggedIn(getApplicationContext(), false, "null");
+                        SaveSharedPreference.setLoggedIn(getApplicationContext(), false, "null", "");
                         handleOnLogout();
                         finish();
                         dialog.dismiss();

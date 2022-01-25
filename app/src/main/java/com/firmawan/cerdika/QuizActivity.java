@@ -5,33 +5,25 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.firmawan.cerdika.utils.SaveSharedPreference;
 
 import java.util.ArrayList;
 
 public class QuizActivity extends AppCompatActivity {
-    String[] arrayString = new String[]{
-            "Pernahkah anda lupa minum obat?",
-            "Dalam 2 minggu terakhir, apakah anda pernah tidak minum obat?",
-            "Pernahkah anda mengurangi atau berhenti minum obat tanpa sepengetahuan dokter karena anda merasa obat yang diberikan membuat keadaan anda menjadi lebih buruk?",
-            "Pernahkah anda lupa membawa obat ketika bepergian?",
-            "Apakah anda masih minum obat kemarin?",
-            "Apakah anda berhenti minum obat ketika anda merasa gejala yang dialami telah teratasi?",
-            "Meminum obat setiap hari merupakan sesuatu ketidaknyamanan untuk beberapa orang. Apakah anda merasa terganggu harus minum obat setiap hari?",
-            "Berapa sering anda lupa minum obat?"
-    };
-    QuizModel list;
-    ListView listView;
-    ArrayList<QuizModel> arrayList = new ArrayList<QuizModel>();
-    QuizAdapter adapter;
-
-    Button btnSubmit;
-
+    String ShowOrHideWebViewInitialUse = "show";
+    private WebView webview;
+    private ProgressBar spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,41 +39,36 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        /**
-         * List Items
-         */
-        listView = (ListView) findViewById(R.id.quiz_medicine_list);
-        setData();
-        Resources resources = getResources();
-        adapter = new QuizAdapter(this, arrayList, resources);
-        listView.setAdapter(adapter);
-        ListHelper.getListViewSize(listView);
+        webview =(WebView)findViewById(R.id.wvQuizForm);
+        spinner = (ProgressBar)findViewById(R.id.pgQuiz);
+        webview.setWebViewClient(new QuizActivity.CustomWebViewClient());
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), list.getQuiz() + "\n" + list.getId(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        /**
-         * Submit Data
-         */
-        btnSubmit = (Button) findViewById(R.id.btn_quiz_submit);
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(QuizActivity.this, DashboardActivity.class);
-                startActivity(intent);
-            }
-        });
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setDomStorageEnabled(true);
+        webview.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
+
+        String uuid = SaveSharedPreference.getLoggedUuid(getApplicationContext());
+        webview.loadUrl("https://secure-brushlands-20308.herokuapp.com/cerdika/logbook/"+uuid+"/create?g=kepatuhan");
     }
 
-    public void setData() {
-        for (int i = 0; i <= arrayString.length - 1; i++) {
-            list = new QuizModel();
-            list.setQuiz(arrayString[i]);
-            list.setId(i);
-            arrayList.add(list);
+    // This allows for a splash screen
+    // (and hide elements once the page loads)
+    private class CustomWebViewClient extends WebViewClient {
+
+        @Override
+        public void onPageStarted(WebView webview, String url, Bitmap favicon) {
+            // only make it invisible the FIRST time the app is run
+            if (ShowOrHideWebViewInitialUse.equals("show")) {
+                webview.setVisibility(webview.INVISIBLE);
+            }
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            ShowOrHideWebViewInitialUse = "hide";
+            spinner.setVisibility(View.GONE);
+            view.setVisibility(webview.VISIBLE);
+            super.onPageFinished(view, url);
         }
     }
 }

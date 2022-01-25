@@ -5,38 +5,28 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.firmawan.cerdika.utils.SaveSharedPreference;
 
 import java.util.ArrayList;
 
 public class LogBookActivity extends AppCompatActivity {
-    String[] arrayString = new String[]{
-            "Apakah anda sudah menghindari rokok maupun asap rokok?",
-            "Apakah anda sudah melakukan olahraga hari ini?",
-            "Apakah anda makan sesuai diet yang telah dianjurkan?",
-            "Apakah anda tidur selama 7-8 jam tadi malam?",
-            "Apakah anda telah mengelola stress anda hari ini?",
-            "Apakah anda sudah meminum obat hari ini?"
-    };
-    QuizModel list;
-    ListView listView;
-    ArrayList<QuizModel> arrayList = new ArrayList<QuizModel>();
-    QuizAdapter adapter;
-
-    ImageView imgPreview;
-    Button btnUpload;
-    private static final int PICK_IMAGE = 100;
-    Uri imageUri;
-
-    Button btnSubmit;
+    String ShowOrHideWebViewInitialUse = "show";
+    private WebView webview;
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,73 +42,36 @@ public class LogBookActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        webview =(WebView)findViewById(R.id.wvLogbookForm);
+        spinner = (ProgressBar)findViewById(R.id.pgLogbook);
+        webview.setWebViewClient(new CustomWebViewClient());
 
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setDomStorageEnabled(true);
+        webview.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
 
-        /**
-         * List Items
-         */
-        listView = (ListView) findViewById(R.id.quiz_list);
-        setData();
-        Resources resources = getResources();
-        adapter = new QuizAdapter(this, arrayList, resources);
-        listView.setAdapter(adapter);
-        ListHelper.getListViewSize(listView);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), list.getQuiz() + "\n" + list.getId(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        /**
-         * Upload Image
-         */
-        btnUpload = (Button) findViewById(R.id.btn_logbook_upload);
-        btnUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openGallery();
-            }
-        });
-
-        /**
-         * Submit data
-         */
-        btnSubmit = (Button) findViewById(R.id.btn_logbook_submit);
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LogBookActivity.this, DashboardActivity.class);
-                startActivity(intent);
-            }
-        });
+        String uuid = SaveSharedPreference.getLoggedUuid(getApplicationContext());
+        webview.loadUrl("https://secure-brushlands-20308.herokuapp.com/cerdika/logbook/"+uuid+"/create?g=logbook");
     }
 
-    public void setData() {
-        for (int i = 0; i <= arrayString.length - 1; i++) {
-            list = new QuizModel();
-            list.setQuiz(arrayString[i]);
-            list.setId(i);
-            arrayList.add(list);
+    // This allows for a splash screen
+    // (and hide elements once the page loads)
+    private class CustomWebViewClient extends WebViewClient {
+
+        @Override
+        public void onPageStarted(WebView webview, String url, Bitmap favicon) {
+            // only make it invisible the FIRST time the app is run
+            if (ShowOrHideWebViewInitialUse.equals("show")) {
+                webview.setVisibility(webview.INVISIBLE);
+            }
         }
-    }
 
-    private void openGallery() {
-        // Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        // startActivityForResult(gallery, PICK_IMAGE);
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE){
-            imageUri = data.getData();
-            imgPreview = (ImageView) findViewById(R.id.iv_logbook_preview);
-            imgPreview.setImageURI(imageUri);
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            ShowOrHideWebViewInitialUse = "hide";
+            spinner.setVisibility(View.GONE);
+            view.setVisibility(webview.VISIBLE);
+            super.onPageFinished(view, url);
         }
     }
 }

@@ -86,7 +86,8 @@ public class RegisterActivity extends AppCompatActivity {
                 passwordEdit.setText("");
                 // on below line we are getting our data from modal class and adding it to our string.
                 if (response.code() == 201) {
-                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, response.body().getData().getToken());
+                    String uuid = response.body().getData().getUser().getMembership().getUuid();
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, response.body().getData().getToken(), uuid);
                     Intent intent = new Intent(RegisterActivity.this, PatientActivity.class);
                     startActivity(intent);
                 }else{
