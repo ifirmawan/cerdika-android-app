@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengertian Hipertensi</title>
+</head>
+
+<body>
+    <figure>
+        <img src="../images/hypertension.jpg" alt="Hipertensi" width="100%" height="50%" />
+        <figcaption>
+            <a style="color: rgba(0,0,0,0.1);font-size: 10px;" href='https://www.freepik.com/vectors/book'>Book vector created by vectorjuice - www.freepik.com</a> 
+        </figcaption>
+    </figure>
+    <div style="text-align: center;">
+        <h1>Pengertian Hipertensi</h1>
+    </div>
+    <div style="text-align: justify;">
+        <p>
+            Hipertensi adalah kondisi terjadinya peningkatan tekanan darah akibat peningkatan pembuluh darah yang terus menerus.1 Hipertensi dapat ditegakkan jika tekanan darah sistolik  ≥ 140 mmHg dan/atau tekanan darah diastolik ≥ 90 mmHg pada pengukuran yang dilakukan di fasilitas layanan kesehatan.2 Sehingga dapat disimpulkan bahwa hipertensi adalah kondisi terjadinya peningkatan pembuluh darah yang terus menerus sehingga menyebabkan peningkatan tekanan darah sistolik (≥ 140 mmHg) dan/atau tekanan darah diastolik (≥ 90 mmHg).
+        </p>
+    </div>
+    <hr/>
+    <div id="player"></div>
+    <script>
+        let tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        let firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        let player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '390',
+                width: '100%',
+                videoId: 'U2wIV1HGels',
+                playerlets: {
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+        event.target.playVideo();
+        }
+
+        let done = false;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+            }
+        }
+        function stopVideo() {
+            player.stopVideo();
+        }
+    </script>
+</body>
+
+</html>

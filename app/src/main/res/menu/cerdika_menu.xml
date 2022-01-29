@@ -15,4 +15,7 @@
     <item
         android:id="@+id/menu_recommend"
         android:title="Rekomendasi" />
+    <item
+        android:id="@+id/menu_calendar"
+        android:title="Kalender" />
 </menu>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komplikasi Hipertensi</title>
+</head>
+
+<body>
+    <figure>
+        <img src="../images/hypertension.jpg" alt="Hipertensi" width="100%" height="50%" />
+        <figcaption>
+            <a style="color: rgba(0,0,0,0.1);font-size: 10px;" href='https://www.freepik.com/vectors/book'>Book vector
+                created by vectorjuice - www.freepik.com</a>
+        </figcaption>
+    </figure>
+    <div style="text-align: center;">
+        <h1>Komplikasi Hipertensi</h1>
+    </div>
+    <div style="text-align: justify;">
+        <ol type="a">
+            <li>
+                <h3>Stroke</h3>
+                <p>Stroke merupakan terjadi kematian sel-sel pada sebagian area di otak yang terjadi karena  pasokan darah ke otak terputus karena penyumbatan atau pecahnya pembuluh darah.3 Stroke atau cerebrovascular injury (CVA)  merupakan suatu kondisi perubahan neurologik yang disebabkan oleh gangguan dalam sirkulasi darah ke bagian otak akibat hilangnya fungsi otak akibat terhentinya suplai darah ke otak.</p>
+            </li>
+            <li>
+                <h3>Infark Miokard </h3>
+                <p>Infark miokard terjadi jika arteri koroner yang aterosklerosis tidak bisa menyuplai darah yang cukup, oksigen ke miokardium atau apabila terbentuk trombus yang mengahambat aliran darah melalui pembuluh tersebut.3 Infark miokard biasanya disebabkan karena adanya sumbatan total pada pembuluh darah coroner yang telah mengalami insufisiensi dan sistem kolateral yang tidak bekerja dengan baik sehingga mengakibatkan rusaknya sebagian miokardium.</p>
+            </li>
+            <li>
+                <h3>Gagal Ginjal </h3>
+                <p>Gagal ginjal dapat terjadi karena tekanan yang tinggi pada kapiler-kapiler ginjal yaitu glomerulus.3 Gagal ginjal merupakan  kehilangan kemampuan ginjal untuk mempertahankan volume dan komposisi cairan tubuh dalam keadaan asupan makanan normal.</p>
+            </li>
+            <li>
+                <h3>Ensefalopati</h3>
+                <p>Ensefalopati atau yang disebut dengan kerusakan otak dapat terjadi karena terjadinya peningkatan tekanan darah yang berakibat terjadinya peningkatan kapiler sehingga cairan terdorong ke dalam ruang interstisium di seluruh susunan saraf pusat.3 Ensefalopati hipertensi merupakan sindrom yang terjadi karena perubahan-perubahan neurologis yang mendadak atau sub akut yang timbul akibat peningkatan tekanan arteri, dan dapat normal kembali apabila tekanan darah turun; yang biasanya ditandai dengan gejala seperti mual muntah, sakit kepala hebat, bingung, dan gangguan penglihatan.</p>
+            </li>
+            <li>
+                <h3>Kelainan pada mata</h3>
+                <ol type="1">
+                    <li>
+                        <h5>Oklusi vena retina</h5>
+                        <p>	Onklusi vena retina merupakan terjadinya penyumbatan suplai darah dalam vena ke retina yang dapat terjadi karena pengerasan pembuluh darah dalam mata.</p>
+                    </li>
+                    <li>
+                        <h5>Oklusi arteri retina </h5>
+                        <p>Onklusi arteri retina merupakan terjadinya penyumbatan pada suplai darah dalam arteri ke retina; hal ini terjadi karena adanya sumbatan oleh gumpalan darah atau zat-zat (seperti lemak) yang terjebak dalam arteri yang menyebabkan pengerasan pembuluh darah di mata.</p>
+                    </li>
+                    <li>
+                        <h5>Makroaneurisma arteri retina </h5>
+                        <p>	Makroaneurisma pada arteri retina merupakan gejala akibat tekanan pada daerah di sekitarnya.</p>
+                    </li>
+                    <li>
+                        <h5>Iskemik neuropati optik anterior </h5>
+                        <p>Iskemik neuropati optik anterior merupakan terjadinya defisiensi aliran darah pada bagian saraf optik anterior sehingga terjadi neuropati pada saraf tersebut.</p>
+                    </li>
+                    <li>
+                        <h5>Ocular motor nerve palsy </h5>
+                        <p>Ocular motor nerve palsy merupakan terjadinya kelumpuhan pada nervus okulomotor yang mengakibatkan gerakan bola mata terganggu.</p>
+                    </li>
+                    <li>
+                        <h5>Retinopati hipertensi</h5>
+                        <p>Retinopati hipertensi merupakan kondisi terjadinya perubahan karakteristik vaskularisasi retina pada klien hipertensi.12 Perubahan yang terjadi dapat berupa penyempitan arteriola retina yang tidak teratur, perdarahan pada lapisan serat saraf dan lapisan pleksiform luar, eksudat dan bercak cotton-wool, lipid star dalam makula, perubahan arteriosklerotik.</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <hr />
+    <div id="player"></div>
+    <script>
+        let tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        let firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        let player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '390',
+                width: '100%',
+                videoId: 's4dKusWOtvo',
+                playerlets: {
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        let done = false;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+            }
+        }
+        function stopVideo() {
+            player.stopVideo();
+        }
+    </script>
+</body>
+
+</html>

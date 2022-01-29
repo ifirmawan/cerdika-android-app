@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faktor Penyebab Hipertensi</title>
+</head>
+
+<body>
+    <figure>
+        <img src="../images/hypertension.jpg" alt="Hipertensi" width="100%" height="50%" />
+        <figcaption>
+            <a style="color: rgba(0,0,0,0.1);font-size: 10px;" href='https://www.freepik.com/vectors/book'>Book vector
+                created by vectorjuice - www.freepik.com</a>
+        </figcaption>
+    </figure>
+    <div style="text-align: center;">
+        <h1>Faktor Penyebab Hipertensi</h1>
+    </div>
+    <div style="text-align: justify;">
+        <ol type="a">
+            <li>
+                <h3>Genetik</h3>
+                <p>Pada klien yang memiliki genetik dengan hipertensi maka beresiko dua kali lebih besar dari klien yang
+                    tidak memiliki genetik dengan hipertensi; Hal ini berkaitan dengan rendahnya rasio antara potasium
+                    terhadap sodium dan terjadinya peningkatan kadar sodium intraseluler.</p>
+            </li>
+            <li>
+                <h3>Jenis kelamin</h3>
+                <p>Jenis kelamin dapat mempengaruhi terjadinya tekanan darah tinggi karena laki-laki yang sudah memasuki
+                    usia 35-50 tahun dan perempuan pasca menopause mempunyai risiko lebih tinggi menderita penyakit
+                    hipertensi.3 Wanita yang belum memasuki masa menopause mempunyai hormon estrogen sehingga berperan
+                    untuk meningkatkan kadar HDL yang dapat mencegah terjadinya proses ateroklerosis. Pada perempuan
+                    dengan pramenopause, terjadi kehilangan hormone estrogen sedikit demi sedikit, yang berlanjut
+                    terjadinya perubahan kuantitas hormone estrogen sesuai dengan perubahan umur yang dimulai pada umur
+                    45-55 tahun.</p>
+            </li>
+            <li>
+                <h3>Usia</h3>
+                <p>Usia dapat mempengaruhi tekanan darah karena semakin bertambahnya usia maka tekanan darah seseorang
+                    semakin meningkat; hal ini menyebabkan tekanan darah pada orang tua berbeda dengan usia remaja
+                    ataupun usia lebih muda.</p>
+            </li>
+            <li>
+                <h3>Diet</h3>
+                <p>Diet adalah pengaturan pola makan yang bertujuan untuk mengurangi resiko komplikasi penyakit.6
+                    Konsumsi natrium secara berlebihan dapat menyebabkan terjadinya konsentrasi natrium dalam cairan
+                    ekstraseluluer meningkat; selain itu, konsumsi sodium dianjurkan tidak lebih dari 100mmol/hari
+                    (sekitar 2,4 g sodium atau 6 g garam).
+                    Makanan yang tinggi lemak dapat menyebabkan terjadinya penimbunan lemak pada pembuluh darah, hal ini
+                    menyebabkan terjadinya penyempitan pembuluh darah yang dapat mengakibatkan terjadinya tekanan darah
+                    tinggi.</p>
+            </li>
+            <li>
+                <h3>Berat Badan</h3>
+                <p>Berat badan lebih dari ideal (>30% BB ideal) atau obesitas memiliki resiko lebih besar mengalami
+                    tekanan darah tinggi dibandingkan dengan orang yang berat badan ideal.</p>
+            </li>
+            <li>
+                <h3>Gaya Hidup</h3>
+                <p>Gaya hidup yang mempengaruhi tekanan darah yaitu gaya hidup yang kurang sehat, misalnya mengkonsumsi
+                    alcohol dan merokok dapat meningkatkan tekanan darah, memicu penyakit hipertensi, serta dapat
+                    menyebabkan kerusakan hati.</p>
+            </li>
+            <li>
+                <h3>Stress</h3>
+                <p>Stress adalah salah satu respon tubuh yang bersifat nonspesifik terhadap semua tuntutan beban yang
+                    ada. Ada beberapa penyakit yang berhubungan dengan stress diantaranya terjadinya tekanan darah
+                    sistolik lebih dari 120 mmHg dan tekanan diastolik lebih dari 80 mmHg atau hipertensi. Stress yang
+                    dialami individu dapat menyebab membangkitnya saraf simpatetis sehingga memicu kerja jantung dan
+                    mengakibatkan peningkatan tekanan darah.</p>
+            </li>
+            <li>
+                <h3>Kurang Olahraga</h3>
+                <p>Perkembangan teknologi yang semakin pesat memudahkan individu untuk mengerjakan kegiatan dengan cepat
+                    serta praktis. Seseorang akan mencari sesuatu yang praktis dan mudah dilakukan sehingga secara
+                    otomatis tubuh tidak atau kurang bergerak. Keadaan inilah yang dapat memicu terjadinya peningkatan
+                    kadar kolesterol dan juga terjadinya tekanan darah yang terus meningkat sehingga memicu terjadinya
+                    penyakit hipertensi.3 Olahraga/aktivitas fisik yang dilakukan secara teratur efektif menurunkan
+                    tekanan darah tinggi; akan tetapi, klien dengan tekanan darah tinggi tidak disarankan untuk
+                    berolahraga terlalu keras ataupun berlebihan.</p>
+            </li>
+        </ol>
+    </div>
+    <hr />
+    <div id="player"></div>
+    <script>
+        let tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        let firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        let player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '390',
+                width: '100%',
+                videoId: 'u98Cs8oTwCw',
+                playerlets: {
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        let done = false;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+            }
+        }
+        function stopVideo() {
+            player.stopVideo();
+        }
+    </script>
+</body>
+
+</html>

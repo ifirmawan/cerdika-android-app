@@ -171,6 +171,10 @@ public class DashboardActivity extends AppCompatActivity {
                 Intent intentRecommend = new Intent(DashboardActivity.this, RecommendActivity.class);
                 startActivity(intentRecommend);
                 return true;
+            case R.id.menu_calendar:
+                Intent intentCalendar = new Intent(DashboardActivity.this, CalendarActivity.class);
+                startActivity(intentCalendar);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

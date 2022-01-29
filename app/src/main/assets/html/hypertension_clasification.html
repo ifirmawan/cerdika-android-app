@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Hipertensi</title>
+    <style>
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-top-color: inherit;
+            border-right-color: inherit;
+            border-bottom-color: inherit;
+            border-left-color: inherit;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-top-color: inherit;
+            border-right-color: inherit;
+            border-bottom-color: inherit;
+            border-left-color: inherit;
+            height: 0pt;
+        }
+
+        th,
+        td {
+            border-right-style: solid;
+            padding: 0pt 5.4pt 0pt 5.4pt;
+            border-bottom-color: #000000;
+            border-top-width: 1pt;
+            border-right-width: 1pt;
+            border-left-color: #000000;
+            vertical-align: top;
+            border-right-color: #000000;
+            border-left-width: 1pt;
+            border-top-style: solid;
+            border-left-style: solid;
+            border-bottom-width: 1pt;
+            border-top-color: #000000;
+            border-bottom-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <figure>
+        <img src="../images/hypertension.jpg" alt="Hipertensi" width="100%" height="50%" />
+        <figcaption>
+            <a style="color: rgba(0,0,0,0.1);font-size: 10px;" href='https://www.freepik.com/vectors/book'>Book vector
+                created by vectorjuice - www.freepik.com</a>
+        </figcaption>
+    </figure>
+    <div style="text-align: center;">
+        <h1>Klasifikasi Hipertensi</h1>
+    </div>
+    <center>
+        <center>
+            <h3>Tabel Klasifikasi hipertensi</h3>
+        </center>
+        <table class="c32">
+            <thead>
+                <tr class="c9">
+                    <th class="c2" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">Jenis</span></p>
+                    </th>
+                    <th class="c16" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">Sistolik (mmHg)</span></p>
+                    </th>
+                    <th class="c0" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">Diastolik (mmHg)</span></p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="c9">
+                    <td class="c2" colspan="1" rowspan="1">
+                        Normal
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">&lt;120</span></p>
+                    </td>
+                    <td class="c0" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">&lt;80</span></p>
+                    </td>
+                </tr>
+                <tr class="c9">
+                    <td class="c2" colspan="1" rowspan="1">
+                        Pre Hipertensi
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">120-139</span></p>
+                    </td>
+                    <td class="c0" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">80-89</span></p>
+                    </td>
+                </tr>
+                <tr class="c9">
+                    <td class="c2" colspan="1" rowspan="1">
+                        Hipertensi Tingkat 1
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">140-159</span></p>
+                    </td>
+                    <td class="c0" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">90-99</span></p>
+                    </td>
+                </tr>
+                <tr class="c9">
+                    <td class="c2" colspan="1" rowspan="1">
+                        Hipertensi Tingkat 2
+                    </td>
+                    <td class="c16" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">≥160</span></p>
+                    </td>
+                    <td class="c0" colspan="1" rowspan="1">
+                        <p class="c6"><span class="c11">≥100</span></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <div id="player"></div>
+        <script>
+            let tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            let firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            let player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '390',
+                    width: '100%',
+                    videoId: 'pohdBhuCUHg',
+                    playerlets: {
+                        'playsinline': 1
+                    },
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            let done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    setTimeout(stopVideo, 6000);
+                    done = true;
+                }
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+        </script>
+</body>
+
+</html>

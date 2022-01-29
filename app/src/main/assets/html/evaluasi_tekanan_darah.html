@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluasi Tekanan Darah</title>
+</head>
+
+<body>
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const MONTHS = [
+            'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'July',
+            'Agustus',
+            'September',
+            'Oktober',
+            'November',
+            'Desember'
+        ];
+
+        const CHART_COLORS = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)'
+        };
+
+        const NAMED_COLORS = [
+            CHART_COLORS.red,
+            CHART_COLORS.orange,
+            CHART_COLORS.yellow,
+            CHART_COLORS.green,
+            CHART_COLORS.blue,
+            CHART_COLORS.purple,
+            CHART_COLORS.grey,
+        ];
+
+        function months(config) {
+            var cfg = config || {};
+            var count = cfg.count || 12;
+            var section = cfg.section;
+            var values = [];
+            var i, value;
+
+            for (i = 0; i < count; ++i) {
+                value = MONTHS[Math.ceil(i) % 12];
+                values.push(value.substring(0, section));
+            }
+
+            return values;
+        }
+        const DATA_COUNT = 7;
+        const NUMBER_CFG = { count: DATA_COUNT, min: -100, max: 100 };
+
+        const labels = months({ count: 7 });
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Sistolik',
+                    data: [100, 150, 120, 75, 90, 180, 160],
+                    borderColor: CHART_COLORS.red
+                },
+                {
+                    label: 'Diastolik',
+                    data: [110, 100, 85, 165, 100, 160, 150],
+                    borderColor: CHART_COLORS.blue
+                }
+            ]
+        };
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Grafik Evaluasi Tekanan Darah'
+                    }
+                }
+            },
+            scales: {
+                yAxes: [{
+                    display: true,
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 4,
+                        stepValue: 50,
+                        max: 200
+                    }
+                }]
+            }
+        };
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, config);
+    </script>
+</body>
+
+</html>
