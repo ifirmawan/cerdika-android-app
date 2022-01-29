@@ -167,9 +167,9 @@ public class DashboardActivity extends AppCompatActivity {
                 Intent intentMedEval = new Intent(DashboardActivity.this, QuizActivity.class);
                 startActivity(intentMedEval);
                 return true;
-            case R.id.menu_patient:
-                Intent intentPatient = new Intent(DashboardActivity.this, PatientActivity.class);
-                startActivity(intentPatient);
+            case R.id.menu_recommend:
+                Intent intentRecommend = new Intent(DashboardActivity.this, RecommendActivity.class);
+                startActivity(intentRecommend);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

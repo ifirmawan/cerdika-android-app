@@ -5,6 +5,7 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/drawable-anydpi/ic_alarm.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_chevron_right.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable-anydpi/ic_clasify_hypertension.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable-anydpi/ic_complication_hypertension.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable-anydpi/ic_doing_diet.xml" value="0.13645833333333332" />
@@ -40,6 +41,7 @@
         <entry key="app/src/main/res/layout/activity_notification.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_patient.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.47152317880794703" />
+        <entry key="app/src/main/res/layout/activity_recommend.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.32876706024569907" />
         <entry key="app/src/main/res/layout/activity_reminder_actvity.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/component_day_view.xml" value="0.1503623188405797" />
@@ -51,6 +53,8 @@
         <entry key="app/src/main/res/layout/row_history.xml" value="0.19021739130434784" />
         <entry key="app/src/main/res/layout/row_medicine.xml" value="0.19021739130434784" />
         <entry key="app/src/main/res/layout/row_quiz.xml" value="0.1852355072463768" />
+        <entry key="app/src/main/res/layout/row_recommend.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/row_recommend_header.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/menu/cerdika_menu.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/menu/filter_history.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/menu/history_menu.xml" value="0.23802083333333332" />

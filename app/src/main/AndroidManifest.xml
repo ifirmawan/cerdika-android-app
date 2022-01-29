@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+            android:name=".RecommendActivity"
+            android:exported="false" />
+        <activity
             android:name=".BloodMeasureActivity"
             android:exported="false" />
         <activity

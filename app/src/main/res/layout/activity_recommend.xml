@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecommendActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/recommend_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REKOMENDASI"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppinsbold"
+            android:autoSizePresetSizes="@array/autosize_title_sizes"
+            android:autoSizeTextType="uniform"
+            android:id="@+id/toolbar_title"
+            android:gravity="center_horizontal" />
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvRecommendSubtitle"
+        android:text="UNTUK MENGONTROL TEKANAN DARAH"
+        android:textAlignment="center"
+        android:padding="@dimen/eight_dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recommend_toolbar"
+        android:gravity="center_horizontal" />
+    <ListView
+        android:id="@+id/lvRecommend"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecommendSubtitle"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
