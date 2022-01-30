@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d(TAG, "login success with email: "+response.body().getData().getUser().getEmail());
                     String uuid = response.body().getData().getUser().getMembership().getUuid();
                     SaveSharedPreference.setLoggedIn(getApplicationContext(), true, response.body().getData().getToken(), uuid);
-                    Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, PatientActivity.class);
                     startActivity(intent);
                 }else{
                     loading.setVisibility(View.GONE);

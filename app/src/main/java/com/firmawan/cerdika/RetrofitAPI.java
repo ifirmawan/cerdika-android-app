@@ -4,6 +4,7 @@ package com.firmawan.cerdika;
 import com.firmawan.cerdika.model.AccountModel;
 import com.firmawan.cerdika.model.LogoutModel;
 import com.firmawan.cerdika.model.NewAccountModel;
+import com.firmawan.cerdika.model.PatientModel;
 import com.firmawan.cerdika.model.ProfileModel;
 import com.firmawan.cerdika.model.UserModel;
 
@@ -29,4 +30,7 @@ public interface RetrofitAPI {
 
     @GET("/api/membership")
     Call<ProfileModel> profileGet(@Header("Authorization") String authHeader);
+
+    @POST("/api/membership/update")
+    Call<ProfileModel> updateProfilePost(@Header("Authorization") String authHeader, @Body PatientModel patientModel);
 }
