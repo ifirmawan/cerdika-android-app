@@ -12,8 +12,6 @@ import android.widget.GridLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.firmawan.cerdika.medicine.MedicineActivity;
-
 public class HypertensionActivity extends AppCompatActivity {
     private RelativeLayout rlHyDesc;
     private RelativeLayout rlHyCaused;

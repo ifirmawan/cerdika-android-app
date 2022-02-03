@@ -48,6 +48,8 @@
         <entry key="app/src/main/res/layout/component_day_view.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/content_notification.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/fragment_add_medicine.xml" value="0.21240942028985507" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/fragment_medicine.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/fragment_reminder.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/grid_item.xml" value="0.23143115942028986" />
         <entry key="app/src/main/res/layout/row_blood_pressure.xml" value="0.205208801077683" />

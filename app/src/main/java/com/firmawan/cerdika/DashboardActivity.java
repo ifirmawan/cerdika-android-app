@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,7 +16,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.firmawan.cerdika.medicine.MedicineActivity;
 import com.firmawan.cerdika.model.LogoutModel;
 import com.firmawan.cerdika.utils.SaveSharedPreference;
 import com.google.gson.Gson;
@@ -50,8 +50,8 @@ public class DashboardActivity extends AppCompatActivity {
         rlAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DashboardActivity.this, MedicineActivity.class);
-                startActivity(intent);
+                Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
+                startActivity(i);
             }
         });
 

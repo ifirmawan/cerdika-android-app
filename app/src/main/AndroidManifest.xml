@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
 
     <application
         android:allowBackup="true"
@@ -29,9 +30,6 @@
             android:name=".LogBookActivity"
             android:exported="false" />
         <activity
-            android:name=".AddBloodActivity"
-            android:exported="false" />
-        <activity
             android:name=".BloodEvaluationActivity"
             android:exported="false" />
         <activity
@@ -39,9 +37,6 @@
             android:exported="false" />
         <activity
             android:name=".HypertensionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".NotificationActivity"
             android:exported="false" />
         <activity
             android:name=".ArticleActivity"
@@ -53,7 +48,7 @@
             android:name=".DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".medicine.MedicineActivity"
+            android:name=".AddBloodActivity"
             android:exported="false" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -62,9 +57,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- <activity android:name=".MainActivity" /> -->
-        <activity android:name=".addmedicine.AddMedicineActivity" />
-        <activity android:name=".alarm.ReminderActivity" />
-        <activity android:name=".report.MonthlyReportActivity" />
+
     </application>
 
 </manifest>

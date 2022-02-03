@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -83,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d(TAG, "login success with email: "+response.body().getData().getUser().getEmail());
                     String uuid = response.body().getData().getUser().getMembership().getUuid();
                     SaveSharedPreference.setLoggedIn(getApplicationContext(), true, response.body().getData().getToken(), uuid);
-                    Intent intent = new Intent(LoginActivity.this, PatientActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                     startActivity(intent);
                 }else{
                     loading.setVisibility(View.GONE);

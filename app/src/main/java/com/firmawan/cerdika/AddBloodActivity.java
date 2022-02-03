@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
-import com.firmawan.cerdika.medicine.MedicineActivity;
 import com.firmawan.cerdika.utils.BloodSharedPreferences;
 
 import java.util.Calendar;
